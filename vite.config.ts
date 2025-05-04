@@ -6,6 +6,16 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === 'development' ? '/' : '/smart-study-scheduler-/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      }
+    }
+  },
   server: {
     host: "::",
     port: 8080,
